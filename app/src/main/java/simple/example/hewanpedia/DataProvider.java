@@ -7,6 +7,7 @@ import java.util.List;
 
 import simple.example.hewanpedia.model.Anjing;
 import simple.example.hewanpedia.model.Hewan;
+import simple.example.hewanpedia.model.Ikan;
 import simple.example.hewanpedia.model.Kucing;
 
 public class DataProvider {
@@ -46,9 +47,26 @@ public class DataProvider {
         return anjings;
     }
 
+    private static List<Ikan> intDataIkan(Context ctx) {
+        List<Ikan> ikans = new ArrayList<>();
+        ikans.add(new Ikan("Mas", "Cina",
+                "Ikan ini banyak disukai masyarakat Indoonesia, selain karena kandungan proteinnya cukup tinggi rasa daging ikan Mas juga enak dan gurih bahkan pada beberapa daerah di Indonesia, ikan Mas kerap di sajikan dengan bumbu spesial dan menjadi masakan khas.", R.drawable.ikan_mas));
+        ikans.add(new Ikan("Ikan Lele", "Afrika",
+                "Lele merupakan ikan tanpa sisik yang dapat ditemukan di perairan tawar di dua benua, yaitu di Benua Afrika dan Asia. Ikan ini memiliki nama internasional sama dengan ikan patin dan baung, yaitu catfish.", R.drawable.ikan_lele));
+        ikans.add(new Ikan("Nila", "Sungai Nil Uganda",
+                "Ikan nila melakukan migrasi secara alami dari habitat aslinya di Sungai Nil di Uganda (bagian hulu Sungai Nil) ke arah selatan melewati Danau Raft dan Tanganyika hingga ke daerah Mesir sepanjang Sungai Nil.",R.drawable.ikan_nila));
+        ikans.add(new Ikan("gurame" ,"malaysia",
+                "Gurami merupakan ikan asli Indonesia, tepatnya berasal dari perairan daerah sunda ( Jawa Barat, Indonesia ). Kemudian ikan ini menyebar ke Malaysia, Thailand, Ceylon, dan Australia. Ikan berbentuk pipih lebar ini hidup di air tawar yang tidak mengalir.",R.drawable.ikan_gurame));
+        ikans.add(new Ikan("Bawal","Hindia",
+                "Ikan Bawal banyak terdapat di Lautan Hindia selain terdapat juga di Afrika, Malaysia dan Jepang. Ikan Bawal hidup dan berenang secara bergerombol. Bawal sering juga ditemukan beriringan dengan udang di dasar laut.",R.drawable.ikan_bawal));
+
+        return ikans;
+    }
+
     private static void initAllHewans(Context ctx) {
         hewans.addAll(initDataKucing(ctx));
         hewans.addAll(initDataAnjing(ctx));
+        hewans.addAll(intDataIkan(ctx));
     }
 
     public static List<Hewan> getAllHewan(Context ctx) {
